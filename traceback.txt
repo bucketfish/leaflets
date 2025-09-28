@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 6, in script
-    define r = Character("rosemary", color="#79b08e", callback=bounce)
-  File "game/script.rpy", line 6, in <module>
-    define r = Character("rosemary", color="#79b08e", callback=bounce)
-NameError: name 'bounce' is not defined
+  File "game/script.rpy", line 196, in script
+    with [move, dissolve]
+TypeError: 'RevertableList' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 6, in script
-    define r = Character("rosemary", color="#79b08e", callback=bounce)
-  File "/Applications/renpy-8.3.2-sdk/renpy/ast.py", line 2235, in execute
-    self.set()
-  File "/Applications/renpy-8.3.2-sdk/renpy/ast.py", line 2249, in set
-    value = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "/Applications/renpy-8.3.2-sdk/renpy/python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 6, in <module>
-    define r = Character("rosemary", color="#79b08e", callback=bounce)
-NameError: name 'bounce' is not defined
+  File "game/script.rpy", line 196, in script
+    with [move, dissolve]
+  File "/Applications/renpy-8.3.2-sdk/renpy/ast.py", line 1361, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "/Applications/renpy-8.3.2-sdk/renpy/exports/statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "/Applications/renpy-8.3.2-sdk/renpy/display/core.py", line 1578, in do_with
+    return self.interact(trans_pause=True,
+  File "/Applications/renpy-8.3.2-sdk/renpy/display/core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Applications/renpy-8.3.2-sdk/renpy/display/core.py", line 2666, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "/Applications/renpy-8.3.2-sdk/renpy/display/core.py", line 2575, in instantiate_transition
+    trans = self.ongoing_transition[layer](
+TypeError: 'RevertableList' object is not callable
 
 macOS-15.6.1-arm64-arm-64bit arm64
 Ren'Py 8.3.2.24090902
-the planter 1.0
-Sat Sep 27 15:57:11 2025
+leaflets 1.0
+Sat Sep 27 21:39:51 2025

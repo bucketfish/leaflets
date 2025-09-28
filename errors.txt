@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 77: expected 'image_name_component' not found.
-    show
-        ^
+File "game/script.rpy", line 253: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "you're making it feel less alone."
+                                       ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Sep 27 16:13:12 2025
+Sat Sep 27 21:58:13 2025
